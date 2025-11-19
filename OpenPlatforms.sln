@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.0.31903.59
+# Visual Studio Version 18
+VisualStudioVersion = 18.0.11205.157 d18.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
 EndProject
@@ -11,6 +11,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		Directory.Packages.props = Directory.Packages.props
 		docs\lazada.md = docs\lazada.md
+		.github\workflows\publish-grab-to-nuget.yml = .github\workflows\publish-grab-to-nuget.yml
+		.github\workflows\publish-lazada-to-nuget.yml = .github\workflows\publish-lazada-to-nuget.yml
+		.github\workflows\publish-shopee-to-nuget.yml = .github\workflows\publish-shopee-to-nuget.yml
+		.github\workflows\publish-tiki-to-nuget.yml = .github\workflows\publish-tiki-to-nuget.yml
 		README.md = README.md
 		docs\shopee.md = docs\shopee.md
 		docs\tiki.md = docs\tiki.md
