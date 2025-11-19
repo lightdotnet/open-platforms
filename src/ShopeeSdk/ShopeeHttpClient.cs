@@ -19,32 +19,13 @@ namespace Light.Shopee
             _credential = credential;
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="path"></param>
-        /// <param name="urlQuery"></param>
-        /// <returns></returns>
         protected async Task<string> BuildSignedUrl(string path, string urlQuery = "")
             => (await _credential.GetCredential()).GenerateSignedUrl(path) + urlQuery;
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <typeparam name="TRequest"></typeparam>
-        /// <param name="path"></param>
-        /// <param name="request"></param>
-        /// <returns></returns>
         protected Task<string> BuildSignedUrl<TRequest>(string path, TRequest request)
             where TRequest : BaseRequest
             => BuildSignedUrl(path, request.UrlQuery);
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="path"></param>
-        /// <returns></returns>
         protected async Task<IShopeeResult<T>> TryGetAsync<T>(string path)
         {
             try
@@ -62,13 +43,6 @@ namespace Light.Shopee
             }
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="path"></param>
-        /// <param name="query"></param>
-        /// <returns></returns>
         protected async Task<IShopeeResult<T>> TryGetAsync<T>(string path, BaseRequest query)
         {
             try
@@ -86,12 +60,6 @@ namespace Light.Shopee
             }
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="path"></param>
-        /// <param name="data"></param>
-        /// <returns></returns>
         protected async Task<IShopeeResult> TryPostAsync(string path, object data)
         {
             try
@@ -109,13 +77,6 @@ namespace Light.Shopee
             }
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="path"></param>
-        /// <param name="data"></param>
-        /// <returns></returns>
         protected async Task<IShopeeResult<T>> TryPostAsync<T>(string path, object data)
         {
             try
@@ -133,11 +94,6 @@ namespace Light.Shopee
             }
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="path"></param>
-        /// <returns></returns>
         protected async Task<HttpResponseMessage> GetAsync(string path)
         {
             var url = await BuildSignedUrl(path);
@@ -145,17 +101,20 @@ namespace Light.Shopee
             return await _httpClient.GetAsync(url);
         }
 
-        /// <summary>
-        ///
-        /// </summary>
-        /// <param name="path"></param>
-        /// <param name="data"></param>
-        /// <returns></returns>
+        protected async Task<HttpResponseMessage> GetAsync(string path, BaseRequest query)
+        {
+            var url = await BuildSignedUrl(path, query);
+
+            return await _httpClient.GetAsync(url);
+        }
+
         protected async Task<HttpResponseMessage> PostAsJsonAsync(string path, object data)
         {
             var url = await BuildSignedUrl(path);
 
             return await _httpClient.PostAsJsonAsync(url, data);
         }
+
+
     }
 }

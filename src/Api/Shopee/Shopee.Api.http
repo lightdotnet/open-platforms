@@ -27,6 +27,11 @@ Accept: application/json
 GET {{Api_HostAddress}}/order/{{Ordersn}}
 Accept: application/json
 
+### Get Pending Orders buyer invoice list
+GET {{Api_HostAddress}}/order/get_pending_buyer_invoice_list
+Accept: application/json
+Content-Type: application/json
+
 ### Get Order buyer invoice info
 POST {{Api_HostAddress}}/order/get_buyer_invoice_info
 Accept: application/json

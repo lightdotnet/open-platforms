@@ -6,7 +6,7 @@ public static class DependencyInjection
 {
     public static void AddShopee(this IServiceCollection services)
     {
-        services.AddScoped<IShopeeCredential, ShopeeCredentialProvider>();
+        services.AddScoped<IShopeeCredential, Credentials>();
 
         services.AddShopeeHttpClient();
         services.AddShopeeAPIv2();

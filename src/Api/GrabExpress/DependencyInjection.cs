@@ -11,7 +11,7 @@ public static class DependencyInjection
 {
     public static void AddGrabExpress(this IServiceCollection services)
     {
-        services.AddScoped<IGrabExpressCredential, CredentialProvider>();
+        services.AddScoped<IGrabExpressCredential, Credentials>();
 
         services.AddGrabExpressHttpClient("https://partner-api.grab.com");
         services.AddGrabExpressAPI();

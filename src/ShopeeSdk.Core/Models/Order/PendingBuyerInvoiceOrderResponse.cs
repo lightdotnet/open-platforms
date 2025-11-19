@@ -3,7 +3,22 @@ using System.Text.Json.Serialization;
 
 namespace Light.Shopee.Models.Order
 {
-    public class PendingBuyerInvoiceOrderResponse
+    public class PendingBuyerInvoiceOrderResult
+    {
+        [JsonPropertyName("code")]
+        public int Code { get; set; }
+
+        [JsonPropertyName("data")]
+        public PendingBuyerInvoiceOrderData Data { get; set; }
+
+        [JsonPropertyName("message")]
+        public string Message { get; set; }
+
+        [JsonPropertyName("user_message")]
+        public string UserMessage { get; set; }
+    }
+
+    public class PendingBuyerInvoiceOrderData
     {
         [JsonPropertyName("more")]
         public bool More { get; set; }

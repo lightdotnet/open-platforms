@@ -24,6 +24,12 @@ public static class OrderEndpoints
             });
 
         endpoint
+            .MapGet("/order/get_pending_buyer_invoice_list", (IOrderClient orderClient) =>
+            {
+                return orderClient.GetPendingBuyerInvoiceOrderList();
+            });
+
+        endpoint
             .MapPost("/order/get_buyer_invoice_info", ([FromBody] string[] orders, IOrderClient orderClient) =>
             {
                 return orderClient.GetBuyerInvoiceInfo(orders);
