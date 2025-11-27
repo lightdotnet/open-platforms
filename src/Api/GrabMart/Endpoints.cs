@@ -5,7 +5,7 @@ namespace Api.GrabMart;
 
 public static class Endpoints
 {
-    public static void MapOrderEndpoints(this IEndpointRouteBuilder endpoint)
+    public static void MapGrabMartEndpoints(this IEndpointRouteBuilder endpoint)
     {
         endpoint
             .MapGet("/{merchandId}/orders/", ([FromRoute] string merchandId, IOrderClient orderClient) =>
@@ -20,6 +20,14 @@ public static class Endpoints
                 {
                     OrderID = "test_id"
                 });
+            });
+
+        endpoint
+            .MapGet("/store-active/{partnerMerchantId}", (
+                [FromRoute] string partnerMerchantId,
+                ISelfServeActivation client) =>
+            {
+                return client.GetActivationUrl(partnerMerchantId);
             });
     }
 }

@@ -27,6 +27,7 @@ namespace Light.Grab.GrabMart
             services.AddScoped<IMenuClient, MenuClient>();
             services.AddScoped<IOrderClient, OrderClient>();
             services.AddScoped<ICampaignClient, CampaignClient>();
+            services.AddScoped<ISelfServeActivation, SelfServeActivationClient>();
 
             return services;
         }

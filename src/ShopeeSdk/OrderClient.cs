@@ -43,6 +43,18 @@ namespace Light.Shopee
             return TryPostAsync<HandleBuyerCancellationResponse>(path, request);
         }
 
+        public async Task<PendingBuyerInvoiceOrderResult> GetPendingBuyerInvoiceOrderList(string cursor = "", int page_size = 100)
+        {
+            var path = "/api/v2/order/get_pending_buyer_invoice_order_list";
+
+            var request = BaseRequest.Create(() => cursor);
+            request.Add("page_size", page_size);
+
+            var response = await GetAsync(path, request);
+
+            return await response.Content.ReadFromJsonAsync<PendingBuyerInvoiceOrderResult>();
+        }
+
         public async Task<IShopeeResult<List<BuyerInvoiceInfo>>> GetBuyerInvoiceInfo(string[] orderList)
         {
             var path = "/api/v2/order/get_buyer_invoice_info";

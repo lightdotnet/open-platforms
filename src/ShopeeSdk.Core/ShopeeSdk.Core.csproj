@@ -9,7 +9,7 @@
 	<Authors>minhvu</Authors>
 	<Description>Package contains common Shopee data definition.</Description>
 	<Summary>Package contains common Shopee data definition.</Summary>
-	<Version>0.0.0.2-beta2</Version>
+	<Version>0.0.0.2-beta4</Version>
 	<PackageTags>lightframework</PackageTags>
 	<PackageIcon>icon.png</PackageIcon>
 	<GeneratePackageOnBuild>True</GeneratePackageOnBuild>

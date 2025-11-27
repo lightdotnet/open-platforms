@@ -7,7 +7,7 @@ public static class DependencyInjection
 {
     public static void AddGrabMart(this IServiceCollection services)
     {
-        services.AddScoped<IGrabMartCredential, CredentialProvider>();
+        services.AddScoped<IGrabMartCredential, Credentials>();
 
         services.AddGrabAuthHttpClient("");
         services.AddGrabMartHttpClient();
@@ -18,6 +18,6 @@ public static class DependencyInjection
     {
         var group = endpoint.MapGroup("grabmart");
 
-        group.MapOrderEndpoints();
+        group.MapGrabMartEndpoints();
     }
 }

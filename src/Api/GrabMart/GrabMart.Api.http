@@ -1,5 +1,5 @@
 @Api_HostAddress = http://localhost:5266/grabmart
-@MerchantId = "<your_merchant_id>"
+@MerchantId = <your_merchant_id>
 
 ### Orders
 GET {{Api_HostAddress}}/{{MerchantId}}/orders
@@ -7,5 +7,9 @@ Accept: application/json
 
 ###
 GET {{Api_HostAddress}}/order/update
+Accept: application/json
+
+### Active Store
+GET {{Api_HostAddress}}/store-active/{{MerchantId}}
 Accept: application/json
 

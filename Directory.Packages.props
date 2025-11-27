@@ -5,10 +5,10 @@
     <AspnetVersion>9.0.5</AspnetVersion>
   </PropertyGroup>
   <ItemGroup>
-    <PackageVersion Include="Lightsoft.Result" Version="0.0.0.15" />
-    <PackageVersion Include="Microsoft.Extensions.Http" Version="9.0.6" />
+    <PackageVersion Include="Lightsoft.Result" Version="1.0.0.1" />
+    <PackageVersion Include="Microsoft.Extensions.Http" Version="10.0.0" />
     <PackageVersion Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="All" />
-    <PackageVersion Include="System.Text.Json" Version="9.0.6" />
-    <PackageVersion Include="System.Net.Http.Json" Version="9.0.6" />
+    <PackageVersion Include="System.Text.Json" Version="10.0.0" />
+    <PackageVersion Include="System.Net.Http.Json" Version="10.0.0" />
   </ItemGroup>
 </Project>
