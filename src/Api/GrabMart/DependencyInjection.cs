@@ -18,6 +18,6 @@ public static class DependencyInjection
     {
         var group = endpoint.MapGroup("grabmart");
 
-        group.MapOrderEndpoints();
+        group.MapGrabMartEndpoints();
     }
 }
