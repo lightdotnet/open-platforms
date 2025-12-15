@@ -14,7 +14,7 @@ namespace Light.Grab.GrabExpress.Delivery.Create
         public ContactInfo recipient { get; set; }
         public string status { get; set; }
         public string trackingURL { get; set; }
-        public object courier { get; set; }
+        public Courier courier { get; set; }
         public Timeline timeline { get; set; }
         public Schedule schedule { get; set; }
         public CashOnDelivery cashOnDelivery { get; set; }
